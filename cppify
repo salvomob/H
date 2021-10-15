@@ -1,0 +1,37 @@
+#! /bin/bash
+
+#creating a setup for c++ project
+
+echo "setting up the enviroment for your new c++ project"
+X=0
+
+# just to try out the until loop :P
+
+until (("$X" > 0))
+do
+    read -p "How do you want to rename the project folder ? : " NAME_FOLDER
+    if [ -d "$NAME_FOLDER" ]
+    then
+        echo "Folder already exists, give it another name!"
+    else
+        mkdir $NAME_FOLDER
+        ((X++))
+    fi
+done
+read -p "How many header files do you need? -> " N_FILESH
+FILESH=0
+while  [ $N_FILESH -gt $FILESH  ]
+do
+    read -p "Creating file n° $FILESH. NAME -> " TMP_FILE
+    touch "$NAME_FOLDER"/"$TMP_FILE".h
+    ((FILESH++))
+done
+read -p "How many source file do you need? -> " N_FILECPP
+FILECPP=0
+while [ $N_FILECPP -gt $FILECPP ]
+do
+    read -p "Creating file n° $FILECPP. NAME -> " TMP_FILE
+    touch "$NAME_FOLDER"/"$TMP_FILE".cpp
+    ((FILECPP++))
+done
+echo "Enviroment created and ready to be used"

@@ -1,0 +1,18 @@
+#! /bin/bash
+
+ # it checks in the pwd  if there is the file passed by parameter
+ FILES=$(ls *.*)
+ X=0
+ for FILE in $FILES 
+ do
+ 	if [ "$FILE" == "$1" ]
+ 	then
+		echo "file : $FILE is in the current directory"  	
+		((X++))
+	fi
+done
+if [ $X != 1 ]
+then
+	echo "file : "$1" missing"
+fi
+exit 0	

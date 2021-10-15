@@ -1,0 +1,15 @@
+#1
+searchfile -> sent to /usr/bin
+it search if a file is in the current directory
+
+#2
+countwords -> sent to /usr/bin
+counts how many time a word given as parameter is repeated in a file
+#3
+cppify -> sent to /usr/bin
+creates a setup for c++ project
+#4
+countFunc -> very similar to #2 no bin, but still tryable in pwd
+#5
+?
+

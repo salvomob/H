@@ -1,0 +1,32 @@
+#! /bin/bash
+
+
+#this function returns the occurencies number of a word passed as parameter $1 in a file $2
+
+readOcc(){
+if [ -f "$2" ]
+then
+	#echo "Counting \"""$1"\" occurencies in "$2":""
+	N=0
+	while read -r LINE
+	do
+		for WORD in $LINE
+		do
+			if [ $WORD == "$1" ]
+			then 
+				((N++))
+			fi
+		done
+	done < "$2"
+	#echo "There are "$N" repetion of \"""$1"\" in "$2"
+    echo "$N"
+else
+	echo "no file named "$2""
+fi	
+}
+
+#NUM="$(readOcc "$1" "$2")" 
+#echo "$NUM occurencies of "$1" in "$2"." >> file.log
+#exit 0
+
+
